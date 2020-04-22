@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bubur Go Where</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Bubur Go Where helps you find where to get your bubur lambuk Ramadan safely in Singapore">
+  <meta name="keywords" content="bubur, lambuk, singapore">
+  <meta name="author" content="Hazrul Azhar Jamari">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/styles/normalize.css">
+  <link rel="stylesheet" href="/styles/skeleton.css">
+  <link rel="stylesheet" href="/styles/main.css">
+
+
+  <!-- load leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+ integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+ crossorigin=""></script>
+ 
+  <!-- Fetch autocomplete core -->
+  <script src="https://unpkg.com/@trevoreyre/autocomplete-js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/@trevoreyre/autocomplete-js/dist/style.css" />
+
+  <!-- Fetch KNN -->
+  <script src="/scripts/leaflet-knn.js"></script>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <style>
+    #autocomplete {
+      z-index: 1000;
+    }
+    .autocomplete-result-list {
+      z-index: 1000;
+    }
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9SELKYN5N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-W9SELKYN5N');
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <header class="titlebar">
+        <div class="site-logo"><img src="/images/bgw-icon.png" style="height: 56px; width: 56px;" alt="BGW" /></div>
+        <span class="site-title">Bubur Go Where</span>
+        <nav class="nav">
+          <ul>
+            <li>For Bubur Providers</li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <div class="row">
+        <div id="autocomplete" class="autocomplete">
+          <input id="address" name="address" class="autocomplete-input" placeholder="Enter your address or postal code"
+          aria-label="Enter your address or postal code" />
+          <ul class="autocomplete-result-list"></ul>
+          <a href="javascript: map.locate();" class="return-current-location-btn"><img src="/images/return-to-current-location.png" style="width: 24px; height: 24px;" /></a>
+        </div>
+        <div class="about">
+          Bubur Go Where helps you find free bubur lambuk, a traditional staple during Ramadan, while maintaining responsible behaviour during the Circuit Breaker measures in Singapore.
+        </div>
+    </div>
+    <div class="row">
+      <div id="mapid" class="twelve columns" style="min-height:540px;"></div>
+    </div>
+    <div class="row">
+      <div class="twelve columns" style="text-align: center; padding-top: 10px;">Copyright &copy; 2020 BuburGoWhere.SG. This is a Community Initiative by <a href="https://www.hazrulazhar.com">Hazrul Azhar</a>.</div>
+    </div>
+  </div>
+</body>
+<script src="/scripts/bgwmap.js"></script>
+<script src="/scripts/autocomplete.onemap.js"></script>
+</html>
