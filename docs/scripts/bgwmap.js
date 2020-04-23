@@ -30,6 +30,14 @@ var buburCC = [
   ["Nee Soon Central@Blk 749 Yishun St 72", 1.4283760, 103.8341135, "<br />Multi-Purpose hall next to Blk 749 Yishun Street 72 Singapore 760749"+buburCCDetails],
   ];
 
+  var alFalahDetails = "<br />Open 2.30pm Onwards Daily. First Come, First Served bases.<br />Distributed by <a href=\"https://www.facebook.com/AL-FALAH-RESTAURANT-885964118145075/\">Al-Falah & Al-Falah Barakah Restaurants</a>.";
+  var alFalahRestos = [
+    ["Al-Falah Hougang",1.3729784, 103.8856792,"<br />Blk 681 Hougang Avenue 8, Singapore 530681<br />Call <a href=\"tel: +6563437786\">63437786</a>"+alFalahDetails],
+    ["Al-Falah Geylang",1.3162757, 103.8991837,"<br />Al-Falah Barakah Restaurant<br />Opposite Geylang Serai Market<br />48A Changi Road Singapore 419705<br />Call <a href=\"tel: +6563487786\">63487786</a>"+alFalahDetails],
+    ["Al-Falah Serangoon",1.3226905, 103.8637971,"<br />1009 Serangoon Road, Singapore 328168<br />Call <a href=\"tel: +6562031334\">62031334</a>"+alFalahDetails],
+    ["Al-Falah Sembawang",1.4257484, 103.8256063,"<br />A&A Special Restaurant, 343 Sembawang Road, Singapore 758353<br />Call <a href=\"tel: +6567560323\">67560323</a>"+alFalahDetails]
+  ];
+
 var map = L.map('mapid').setView([1.3609751, 103.8218307], 12);
   mapLink = 
       '<a href="https://openstreetmap.org">OpenStreetMap</a>';
@@ -42,6 +50,12 @@ var map = L.map('mapid').setView([1.3609751, 103.8218307], 12);
 for (var i = 0; i < buburCC.length; i++) {
 marker = new L.marker([buburCC[i][1],buburCC[i][2]])
   .bindPopup(buburCC[i][0]+buburCC[i][3])
+  .addTo(map);
+}
+
+for (var i = 0; i < alFalahRestos.length; i++) {
+marker = new L.marker([alFalahRestos[i][1],alFalahRestos[i][2]])
+  .bindPopup(alFalahRestos[i][0]+alFalahRestos[i][3])
   .addTo(map);
 }
 
