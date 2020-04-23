@@ -73,8 +73,12 @@ nav.nav li {
   font-weight: normal;
 }
 
+.autocomplete-input {
+  padding-right: 40px !important;
+}
+
 .autocomplete-result-list {
-  width: 85% !important;
+  width: 95% !important;
 }
 
 .about {
