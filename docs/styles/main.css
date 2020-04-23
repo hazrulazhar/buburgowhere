@@ -73,8 +73,17 @@ nav.nav li {
   font-weight: normal;
 }
 
+.autocomplete-result-list {
+  width: 85% !important;
+}
+
 .about {
   padding: 12px;
   padding-top: 0px;
   text-align: center;
+}
+
+.copyright {
+  text-align: center;
+  padding: 15px;
 }
