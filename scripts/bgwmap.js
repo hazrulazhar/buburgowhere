@@ -30,12 +30,19 @@ var buburCC = [
   ["Nee Soon Central@Blk 749 Yishun St 72", 1.4283760, 103.8341135, "<br />Multi-Purpose hall next to Blk 749 Yishun Street 72 Singapore 760749"+buburCCDetails],
   ];
 
-  var alFalahDetails = "<br />Open 2.30pm Onwards Daily. First Come, First Served bases.<br />Distributed by <a href=\"https://www.facebook.com/AL-FALAH-RESTAURANT-885964118145075/\">Al-Falah & Al-Falah Barakah Restaurants</a>.";
-  var alFalahRestos = [
+  var alFalahDetails = "<br />Open 2.30pm Onwards Daily. First Come, First Served basis.<br />Distributed by <a href=\"https://www.facebook.com/AL-FALAH-RESTAURANT-885964118145075/\">Al-Falah & Al-Falah Barakah Restaurants</a>.";
+  var anisDinDetails = "<br />Open 3.30pm to 5.30pm depending on availability. First Come, First Served basis.<br />Distributed by <a href=\"https://www.facebook.com/anisdincatering\">Anis & Din Catering</a>.";
+  var businesses = [
     ["Al-Falah Hougang",1.3729784, 103.8856792,"<br />Blk 681 Hougang Avenue 8, Singapore 530681<br />Call <a href=\"tel: +6563437786\">63437786</a>"+alFalahDetails],
     ["Al-Falah Geylang",1.3162757, 103.8991837,"<br />Al-Falah Barakah Restaurant<br />Opposite Geylang Serai Market<br />48A Changi Road Singapore 419705<br />Call <a href=\"tel: +6563487786\">63487786</a>"+alFalahDetails],
     ["Al-Falah Serangoon",1.3226905, 103.8637971,"<br />1009 Serangoon Road, Singapore 328168<br />Call <a href=\"tel: +6562031334\">62031334</a>"+alFalahDetails],
-    ["Al-Falah Sembawang",1.4257484, 103.8256063,"<br />A&A Special Restaurant, 343 Sembawang Road, Singapore 758353<br />Call <a href=\"tel: +6567560323\">67560323</a>"+alFalahDetails]
+    ["Al-Falah Sembawang",1.4257484, 103.8256063,"<br />A&A Special Restaurant, 343 Sembawang Road, Singapore 758353<br />Call <a href=\"tel: +6567560323\">67560323</a>"+alFalahDetails],
+    ["Anis & Din Catering",1.4486086, 103.8091409,"<br />15 Woodlands Loop #03-43, Singapore 738322<br />Call <a href=\"tel: +6590664114\">90664114</a> first to confirm availability."+anisDinDetails]
+  ];
+
+  var individuals = [
+    ["Ms Sary",1.2969463, 103.8392507,"<br />Blk 35 Lloyd Road, THE BOTANIC ON LLOYD, Singapore 239126<br />Call <a href=\"tel: +6591617535\">91617535</a> to confirm availability.<br />Open 5pm to 6pm depending on availability. First Come, First Served basis.<br />Distributed by Ms Sary."],
+    ["Nik",1.3229308, 103.8628900,"<br />12 SAINT GEORGE'S ROAD SAINT GEORGE'S EAST GARDENS SINGAPORE 320012<br />Call <a href=\"tel: +6588921977\">88921977</a> to confirm availability.<br />Open anytime in the day. First Come, First Served basis.<br />Distributed by Mr Nik."],
   ];
 
 var map = L.map('mapid').setView([1.3609751, 103.8218307], 12);
@@ -53,11 +60,17 @@ marker = new L.marker([buburCC[i][1],buburCC[i][2]])
   .addTo(map);
 }
 
-for (var i = 0; i < alFalahRestos.length; i++) {
-marker = new L.marker([alFalahRestos[i][1],alFalahRestos[i][2]])
-  .bindPopup(alFalahRestos[i][0]+alFalahRestos[i][3])
+for (var i = 0; i < businesses.length; i++) {
+marker = new L.marker([businesses[i][1],businesses[i][2]])
+  .bindPopup(businesses[i][0]+businesses[i][3])
   .addTo(map);
 }
+
+for (var i = 0; i < individuals.length; i++) {
+  marker = new L.marker([individuals[i][1],individuals[i][2]])
+    .bindPopup(individuals[i][0]+individuals[i][3])
+    .addTo(map);
+  }
 
 function onLocationFound(e) {
   var radius = e.accuracy / 2;
