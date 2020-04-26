@@ -63,3 +63,8 @@ function gotoLocation(latitude,longitude,address) {
   L.circle(latlng, 30).addTo(map).bindPopup(address).openPopup();
   map.flyTo(latlng, 15);
 }
+
+// todo
+function getNearest(latitude, longitude) {
+  var index = leafletKnn(layer);
+}

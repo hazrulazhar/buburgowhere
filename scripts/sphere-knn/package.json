@@ -1,0 +1,59 @@
+{
+  "_from": "sphere-knn",
+  "_id": "sphere-knn@1.4.0",
+  "_inBundle": false,
+  "_integrity": "sha512-sFdsABoSClBxz3DzO2yvHwbbV4zIRvgrIeC1qqWPYzKMtT26xCF/r5xG9Sj7iLFG9GJIt1WnT6VpYaQeRvIzPA==",
+  "_location": "/sphere-knn",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "sphere-knn",
+    "name": "sphere-knn",
+    "escapedName": "sphere-knn",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/sphere-knn/-/sphere-knn-1.4.0.tgz",
+  "_shasum": "27f3120cdfade79efbbbc2e147a4b8d21c831537",
+  "_spec": "sphere-knn",
+  "_where": "/Users/haz/Projects/buburgowhere",
+  "author": {
+    "name": "The Dark Sky Company",
+    "email": "developer@darksky.net"
+  },
+  "bugs": {
+    "url": "https://github.com/darkskyapp/sphere-knn/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "search for k nearest neighbors on a sphere",
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "homepage": "https://github.com/darkskyapp/sphere-knn#readme",
+  "keywords": [
+    "kd-tree",
+    "nearest neighbor"
+  ],
+  "main": "./index",
+  "name": "sphere-knn",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/darkskyapp/sphere-knn.git"
+  },
+  "scripts": {
+    "test": "mocha --check-leaks"
+  },
+  "version": "1.4.0"
+}
